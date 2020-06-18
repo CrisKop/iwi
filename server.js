@@ -19,7 +19,7 @@ app.get("/invite", function (request, response) {
 app.get("/", (request, response) => {
   response.sendStatus(200);
 });
-
+// xddd
 app.listen(process.env.PORT);
 
 setInterval(() => {
