@@ -223,4 +223,4 @@ if (!message.content.startsWith(prefix)) return;
  
   
 });
-client.login(process.env.TOKEN);
+client.login("NzE2OTE4NTI0NzMxNDU3NjE2.Xuq0UA.ZVW1e0Zcv__nHtqJictjCUc2fhw");
