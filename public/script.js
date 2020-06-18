@@ -1,0 +1,20 @@
+window.onload=()=>{
+  anime({
+    targets:".spike",
+    left:"calc(100vw + 15vmin)",
+    duration:2000,
+    easing:"linear",
+    loop:true
+  });
+  anime({
+    targets:"#cube",
+    keyframes:[
+      {translateY:"0vh",duration:1100,easing:"easeInQuad"},
+      {translateY:"-20vh",duration:300,easing:"easeOutQuad"},
+      {translateY:"0vh",duration:300,easing:"easeInQuad"},
+      {translateY:"0vh",duration:300,easing:"easeInQuad"}
+    ],
+    duration:2000,
+    loop:true
+  });
+}

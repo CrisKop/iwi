@@ -1,0 +1,122 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+<!DOCTYPE html>
+<script>
+      var loc = window.location.href+'';
+if (loc.indexOf('http://')==0){
+    window.location.href = loc.replace('http://','https://');
+}
+    </script>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="This is IwI, but not is OwO">
+    <meta property="og:image" content="https://cdn.glitch.com/5be65feb-a35b-4b3e-9641-8cd63b590f97%2Fiwi.png?v=1590551496178">
+
+    <title>IwI by CrisKop</title>
+
+    <link id="favicon" rel="icon" href="https://cdn.glitch.com/5be65feb-a35b-4b3e-9641-8cd63b590f97%2Fiwi.ico?v=1590552685402" type="image/x-icon">
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/script.js" defer></script>
+
+    
+     <script>
+    var colors = new Array(
+  [62,35,255],
+  [60,255,60],
+  [255,35,98],
+  [45,175,230],
+  [255,0,255],
+  [255,128,0]);
+
+var step = 0;
+//color table indices for: 
+// current color left
+// next color left
+// current color right
+// next color right
+var colorIndices = [0,1,2,3];
+
+//transition speed
+var gradientSpeed = 0.002;
+
+function updateGradient()
+{
+  
+  if ( $===undefined ) return;
+  
+var c0_0 = colors[colorIndices[0]];
+var c0_1 = colors[colorIndices[1]];
+var c1_0 = colors[colorIndices[2]];
+var c1_1 = colors[colorIndices[3]];
+
+var istep = 1 - step;
+var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
+var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
+var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
+var color1 = "rgb("+r1+","+g1+","+b1+")";
+
+var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
+var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
+var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
+var color2 = "rgb("+r2+","+g2+","+b2+")";
+
+ $('#gradient').css({
+   background: "-webkit-gradient(linear, left top, right top, from("+color1+"), to("+color2+"))"}).css({
+    background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"});
+  
+  step += gradientSpeed;
+  if ( step >= 1 )
+  {
+    step %= 1;
+    colorIndices[0] = colorIndices[1];
+    colorIndices[2] = colorIndices[3];
+    
+    //pick two new target color indices
+    //do not pick the same as the current one
+    colorIndices[1] = ( colorIndices[1] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
+    colorIndices[3] = ( colorIndices[3] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
+    
+  }
+}
+
+setInterval(updateGradient,10);
+    </script>
+    
+    
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="gradient" />
+     <div style="text-align:center;">
+    <h2 style="font-size:100px;color:white;">
+      This is
+       <img style="position:relative;top:30px;" src="https://cdn.glitch.com/5be65feb-a35b-4b3e-9641-8cd63b590f97%2Fiwi.png?v=1590551496178">
+      <br>
+      And Not is
+      <img style="position:relative;top:30px;" src="https://cdn.glitch.com/5be65feb-a35b-4b3e-9641-8cd63b590f97%2FOwO.png?v=1590552756987">
+      <br>
+      <a target="_blank" href="https://terretri-bot.tk/invite"><img style="margin:-30px;" width="400px;" src="https://cdn.glitch.com/5be65feb-a35b-4b3e-9641-8cd63b590f97%2FClick%20me.png?v=1590552856412"></a>
+    </h2>
+       <a href="/cube" >
+       <h2 style="color:white;position:absolute;top:10px;right:20px;">
+        Click Me to See A cube Jumping
+       </h2>
+         </a>
+   
+    </div>
+ </body>
+    
+    
+    
+    
+   
+
+
+
+</html>

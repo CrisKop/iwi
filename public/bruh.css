@@ -1,0 +1,38 @@
+body{
+  background-color:#4C1DD0;
+  overflow:hidden;
+}
+#floor{
+  height:30vh;
+  width:100vw;
+  position:absolute;
+  left:0vw;
+  bottom:0vh;
+  background-color:#18066F;
+}
+.spike{
+  height:15vmin;
+  width:15vmin;
+  position:absolute;
+  bottom:30vh;
+  left:-25vmin;
+}
+#cube{
+  height:20vmin;
+  width:20vmin;
+  position:absolute;
+  bottom:30vh;
+  left:calc(50vw - 10vmin);
+}
+a{
+  position:absolute;
+  top:4px;
+  display:inline-block;
+  color:white;
+}
+#yt{
+  left:5px;
+}
+#cp{
+  right:5px;
+}
