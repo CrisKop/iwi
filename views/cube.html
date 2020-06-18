@@ -1,0 +1,62 @@
+<!-- Notes from Coder:
+
+    - I implemented the cube moving right to left where
+    in the game, it moves left to right, so sorry.
+    (however technically mirror mode exists so I left it)
+    - I tried hard, but I couldn't find a good way to
+    implement rotation while jumping.
+    - On desktop browser, there seems to be a visual 
+    glitch on the spike. Please ignore.
+    - If you're on Android, you're gonna get some module
+    related error. Just ignore it.
+    
+    Otherwise, hope you enjoy!
+-->
+
+
+<!DOCTYPE HTML>
+<html>
+  <!DOCTYPE html>
+<script>
+      var loc = window.location.href+'';
+if (loc.indexOf('http://')==0){
+    window.location.href = loc.replace('http://','https://');
+}
+    </script>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Into this you can see a geometry dash cube jumping">
+    <meta property="og:image" content="https://cdn.glitch.com/5be65feb-a35b-4b3e-9641-8cd63b590f97%2Fiwi.png?v=1590551496178">
+
+    <title>IwI by CrisKop</title>
+
+    <link id="favicon" rel="icon" href="https://cdn.glitch.com/5be65feb-a35b-4b3e-9641-8cd63b590f97%2Fiwi.ico?v=1590552685402" type="image/x-icon">
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/bruh.css">
+
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/script.js" defer></script>
+  
+  <head>
+    <title>Geometry Dash</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.js"></script>
+  </head>
+  <body>
+    <svg class="spike" viewbox="0 0 50 50">
+      <linearGradient x2="0%" y1="0%" y2="100%" id="gradient">
+        <stop style="stop-color:black;" offset="0%" />
+        <stop style="stop-color:#00000000" offset="100%" />
+  </linearGradient>
+      <polygon class="inner" points="0 50 25 0 50 50 0 50" fill="url(#gradient)" stroke="white" stroke-width="2"/>
+    </svg>
+    <div id="floor"></div>
+    <svg id="cube" viewbox="0 0 100 100">
+      <polyline points="0 0 100 0 100 100 0 100 0 0 20 20 20 80 80 80 80 20 20 20" fill="#7FF70A"></polyline>
+      <polyline points="40 40 40 60 60 60 60 40 40 40" fill="#0FF6F8"></polyline>
+    </svg>
+    <a style="font-size:50px;" id="cp" href="/">Back</a>
+  </body>
+</html>
